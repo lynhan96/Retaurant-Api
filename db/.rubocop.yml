@@ -1,0 +1,55 @@
+Style/WordArray:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Documentation:
+  Enabled: false
+Layout/TrailingBlankLines:
+  Enabled: false
+Layout/VariableNumber:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Performance/Casecmp:
+  Enabled: false
+Style/RedundantParentheses:
+  Enabled: false
+Lint/ScriptPermission:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+EndOfLine:
+  Enabled: false
+Layout/MultilineBlockLayout:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
+AllCops:
+  Exclude:
+    - 'spec/rails_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'db/*'
+    - 'bin/*'
+    - 'config/*'
+    - 'config/environments/*'
+    - 'Gemfile'
+    - 'Gemfile'
+  DisplayCopNames: true
