@@ -9,9 +9,9 @@ RSpec.describe 'Login', type: :request do
       params = { email: admin.email, password: '123123' }
 
       body = RequestHelper.make_request({}, params, [url, 'login'])
-      ap body
+
       expect(body[:code]).to eq 0
-      expect(body[:data].uid).to eq admin.id
+      expect(body[:data][:uid]).to eq admin.id
     end
   end
 end

@@ -6,7 +6,7 @@ const { Future, encaseP, reject, of } = require('fluture')
 const { responseErrorWithNext: responseError } = require('../helpers/responseErrorHelper')
 const { getEmployeeProfile } = require('../functions/admin/general')
 
-const requiredHeaders = ['authorization', 'content-type', 'date', 'x-api-language', 'uid', 'token']
+const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-language', 'uid', 'token']
 const requiredAuthenticationUrls = [
   '/v1/profile',
   '/v1/updateProfile'
@@ -21,7 +21,7 @@ const checkHeaderValues = (next, res, headers) => {
 }
 
 const checkRequestDatetime = (next, res, headers) => {
-  const requestDatetime = moment(headers['date']).utc().format('YYYY-MM-DD hh:mm:ss')
+  const requestDatetime = headers['date-time']
   const minDatetime = moment.utc().subtract(10, 'minutes').format('YYYY-MM-DD hh:mm:ss')
   const maxDatetime = moment.utc().add(10, 'minutes').format('YYYY-MM-DD hh:mm:ss')
 

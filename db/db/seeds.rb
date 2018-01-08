@@ -1,3 +1,5 @@
-Employee.new(position: 'admin', email: 'quantrivien@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Quan tri vien A', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
-Employee.new(position: 'admin', email: 'quantrivien1@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Quan tri vien A 1', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
-Employee.new(position: 'admin', email: 'quantrivien2@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Quan tri vien A 2', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
+Employee.new(position: 'administrator', email: 'quantrivien@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Nguyen Van A', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
+Employee.new(position: 'warehouse', email: 'nhanvienkho@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Nguyen Van B', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
+Employee.new(position: 'waiter', email: 'phucvu@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Nguyen Van C', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
+Employee.new(position: 'kitchen', email: 'nhabep@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Nguyen Van D', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
+Employee.new(position: 'cashier', email: 'thungan@gmail.com', password: '4297f44b13955235245b2497399d7a93', name: 'Nguyen Van E', phone_number: '012312312', birthday: Time.now - 20.years, gender: 'Male').save
