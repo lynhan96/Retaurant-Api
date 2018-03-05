@@ -3,7 +3,7 @@ const moment = require('moment')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('users', [{
+    return queryInterface.bulkInsert('employees', [{
       name: 'Nguyen Van A',
       position: 'administrator',
       email: 'quantrivien@gmail.com',

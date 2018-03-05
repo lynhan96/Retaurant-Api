@@ -11,9 +11,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      position: {
-        type: Sequelize.STRING
-      },
       email: {
         type: Sequelize.STRING
       },
@@ -29,6 +26,11 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
+      isVip: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -42,6 +44,6 @@ module.exports = {
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users')
+    return queryInterface.dropTable('users')
   }
 }
