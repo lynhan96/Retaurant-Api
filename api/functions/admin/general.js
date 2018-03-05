@@ -1,3 +1,3 @@
-const employeeTable = require('../../../models/user')
+const Employee = require('../../../models/employee')
 
-exports.getEmployeeProfile = params => employeeTable.findOne({where: {email: params.email}})
+exports.getEmployeeProfile = params => Employee.findOne({where: {email: params.email}})
