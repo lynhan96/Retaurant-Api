@@ -2,7 +2,7 @@
   "development": {
     "username": "nhan",
     "password": "123123",
-    "database": "database_development",
+    "database": "restaurant_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
@@ -16,7 +16,7 @@
   "production": {
     "username": "",
     "password": "",
-    "database": "database_production",
+    "database": "restaurant_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

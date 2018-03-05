@@ -5,7 +5,7 @@ RSpec.describe 'Login', type: :request do
     let!(:url) { ENV['TEST_URL'] + 'v1/' }
 
     it 'return airport data' do
-      params = { email: 'a@a.com', password: '123123' }
+      params = { email: 'quantrivien@gmail.com', password: '123123' }
 
       body = RequestHelper.make_request({}, params, [url, 'login'])
       ap body
