@@ -56,8 +56,8 @@ module.exports = (req, res, next) => {
   const { headers, originalUrl } = req
   const neededHeaders = R.pick(requiredHeaders, headers)
 
-  checkHeaderValues(next, res, neededHeaders)
-  checkRequestDatetime(next, res, neededHeaders)
+  // checkHeaderValues(next, res, neededHeaders)
+  // checkRequestDatetime(next, res, neededHeaders)
 
   if (R.indexOf(originalUrl, requiredAuthenticationUrls) === -1) {
     next()
