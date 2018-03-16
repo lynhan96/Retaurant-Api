@@ -25,3 +25,11 @@ exports.getEmployees = params => Employee.findAll({
   } },
   attributes: employeeAttrs
 })
+
+exports.getEmployee = params => Employee.findOne({
+  where: { id: params.employeeId }
+})
+
+exports.checkEmployeeExsit = employee => employee ? of(employee) : reject(417)
+
+exports.updateEmployee = (employee, params) => employee.update(params)
