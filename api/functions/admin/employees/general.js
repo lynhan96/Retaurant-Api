@@ -23,7 +23,8 @@ exports.getEmployees = params => Employee.findAll({
   where: { position: {
     [Op.ne]: 'administrator'
   } },
-  attributes: employeeAttrs
+  attributes: employeeAttrs,
+  order: [['id', 'ASC']]
 })
 
 exports.getEmployee = params => Employee.findOne({
@@ -33,3 +34,5 @@ exports.getEmployee = params => Employee.findOne({
 exports.checkEmployeeExsit = employee => employee ? of(employee) : reject(417)
 
 exports.updateEmployee = (employee, params) => employee.update(params)
+
+exports.createEmployee = params => Employee.create(params)
