@@ -26,7 +26,19 @@ exports.getEmployees = params => Employee.findAll({
     }
   },
   attributes: employeeAttrs,
-  order: [['id', 'ASC']]
+  order: [[params.sortBy, params.sortDir]]
+})
+
+exports.getEmployeesLimit = params => Employee.findAll({
+  where: {
+    position: {
+      [Op.ne]: 'administrator'
+    }
+  },
+  attributes: employeeAttrs,
+  order: [[params.sortBy, params.sortDir]],
+  offset: parseInt(params.limit) * parseInt(params.offset),
+  limit: parseInt(params.limit)
 })
 
 exports.getEmployeesByKeyWord = params => Employee.findAll({
@@ -40,7 +52,9 @@ exports.getEmployeesByKeyWord = params => Employee.findAll({
     ]
   },
   attributes: employeeAttrs,
-  order: [['id', 'ASC']]
+  order: [[params.sortBy, params.sortDir]],
+  offset: parseInt(params.limit) * parseInt(params.offset),
+  limit: parseInt(params.limit)
 })
 
 exports.getEmployee = params => Employee.findOne({
