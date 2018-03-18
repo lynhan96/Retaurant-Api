@@ -20,9 +20,25 @@ const employeeAttrs = [
 ]
 
 exports.getEmployees = params => Employee.findAll({
-  where: { position: {
-    [Op.ne]: 'administrator'
-  } },
+  where: {
+    position: {
+      [Op.ne]: 'administrator'
+    }
+  },
+  attributes: employeeAttrs,
+  order: [['id', 'ASC']]
+})
+
+exports.getEmployeesByKeyWord = params => Employee.findAll({
+  where: {
+    position: {
+      [Op.ne]: 'administrator'
+    },
+    [Op.or]: [
+      {name: { [Op.iLike]: '%' + params.keyword + '%' }},
+      {position: { [Op.iLike]: '%' + params.keyword + '%' }}
+    ]
+  },
   attributes: employeeAttrs,
   order: [['id', 'ASC']]
 })
@@ -36,3 +52,5 @@ exports.checkEmployeeExsit = employee => employee ? of(employee) : reject(417)
 exports.updateEmployee = (employee, params) => employee.update(params)
 
 exports.createEmployee = params => Employee.create(params)
+
+exports.deleteEmployee = employee => employee.destroy()
