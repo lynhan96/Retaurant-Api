@@ -32,6 +32,9 @@ module.exports = {
       restaurantName: {
         type: Sequelize.STRING
       },
+      restaurantDomainName: {
+        type: Sequelize.STRING
+      },
       expiredDate: {
         type: Sequelize.DATE
       },

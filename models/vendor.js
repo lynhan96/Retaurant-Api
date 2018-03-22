@@ -15,6 +15,9 @@ const User = sequelizeDb.define('vendors', {
   restaurantName: {
     type: sequelize.STRING
   },
+  restaurantDomainName: {
+    type: sequelize.STRING
+  },
   position: {
     allowNull: false,
     type: sequelize.ENUM('vendor'),
