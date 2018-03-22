@@ -12,6 +12,9 @@ const User = sequelizeDb.define('vendors', {
   password: {
     type: sequelize.STRING
   },
+  token: {
+    type: sequelize.STRING
+  },
   restaurantName: {
     type: sequelize.STRING
   },

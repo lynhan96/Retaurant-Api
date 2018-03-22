@@ -14,6 +14,7 @@ const Food = sequelizeDb.define('foods', {
     defaultValue: true
   },
   vendorId: {
+    allowNull: false,
     type: sequelize.INTEGER
   },
   description: {

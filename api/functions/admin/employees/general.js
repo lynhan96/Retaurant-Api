@@ -18,9 +18,7 @@ const employeeAttrs = [
 
 exports.getEmployees = params => Employee.findAll({
   where: {
-    position: {
-      [Op.ne]: 'administrator'
-    }
+    vendorId: params.vendorId
   },
   attributes: employeeAttrs,
   order: [[params.sortBy, params.sortDir]]
@@ -28,9 +26,7 @@ exports.getEmployees = params => Employee.findAll({
 
 exports.getEmployeesLimit = params => Employee.findAll({
   where: {
-    position: {
-      [Op.ne]: 'administrator'
-    }
+    vendorId: params.vendorId
   },
   attributes: employeeAttrs,
   order: [[params.sortBy, params.sortDir]],
@@ -40,9 +36,7 @@ exports.getEmployeesLimit = params => Employee.findAll({
 
 exports.getEmployeesByKeyWord = params => Employee.findAll({
   where: {
-    position: {
-      [Op.ne]: 'administrator'
-    },
+    vendorId: params.vendorId,
     [Op.or]: [
       {name: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }},
       {position: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }}
@@ -55,7 +49,7 @@ exports.getEmployeesByKeyWord = params => Employee.findAll({
 })
 
 exports.getEmployee = params => Employee.findOne({
-  where: { id: params.employeeId }
+  where: { id: params.employeeId, vendorId: params.vendorId }
 })
 
 exports.checkEmployeeExsit = employee => employee ? of(employee) : reject(417)

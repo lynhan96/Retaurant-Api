@@ -26,7 +26,10 @@ const dataHandler = (res, allEmployee, defaultSearchParams) => {
 }
 
 exports.employees = (req, res) => {
-  const params = req.body
+  let params = req.body
+  const { headers } = req
+
+  params['vendorId'] = headers['vid']
 
   let defaultSearchParams = {
     sortBy: 'id',

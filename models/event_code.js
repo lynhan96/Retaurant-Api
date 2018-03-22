@@ -10,6 +10,7 @@ const EventCode = sequelizeDb.define('event_codes', {
     type: sequelize.INTEGER
   },
   vendorId: {
+    allowNull: false,
     type: sequelize.INTEGER
   },
   used: {

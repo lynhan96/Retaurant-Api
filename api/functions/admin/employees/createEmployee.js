@@ -6,7 +6,11 @@ const responseDataHelper = require('../../../helpers/responseDataHelper')
 const { createEmployee } = require('./general')
 
 exports.createEmployee = (req, res) => {
-  const params = req.body
+  let params = req.body
+  const { headers } = req
+
+  params['vendorId'] = headers['vid']
+
   const requiredParams = ['name', 'position', 'phoneNumber', 'gender']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {

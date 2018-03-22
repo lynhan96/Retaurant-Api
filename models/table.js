@@ -10,6 +10,7 @@ const Table = sequelizeDb.define('tables', {
     type: sequelize.INTEGER
   },
   vendorId: {
+    allowNull: false,
     type: sequelize.INTEGER
   },
   createdAt: {

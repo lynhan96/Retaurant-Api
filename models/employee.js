@@ -4,8 +4,12 @@ const sequelizeDb = require('./sequelize')
 
 const Employee = sequelizeDb.define('employees', {
   phoneNumber: sequelize.STRING,
-  vendorId: sequelize.INTEGER,
+  vendorId: {
+    allowNull: false,
+    type: sequelize.INTEGER
+  },
   name: sequelize.STRING,
+  token: sequelize.STRING,
   email: sequelize.STRING,
   position: sequelize.STRING,
   birthday: sequelize.DATE,

@@ -14,6 +14,10 @@ const FoodCategory = sequelizeDb.define('food_categories', {
   description: {
     type: sequelize.STRING
   },
+  vendorId: {
+    allowNull: false,
+    type: sequelize.INTEGER
+  },
   createdAt: {
     type: sequelize.DATE,
     defaultValue: sequelize.NOW

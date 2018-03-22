@@ -1,5 +1,6 @@
 'use strict'
 const moment = require('moment')
+const { generateToken } = require('../api/functions/admin/general')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -11,6 +12,7 @@ module.exports = {
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       gender: 'Nam',
+      token: generateToken(),
       restaurantDomainName: 'dai-duong',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
@@ -23,6 +25,7 @@ module.exports = {
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       gender: 'Nam',
+      token: generateToken(),
       restaurantDomainName: 'sao-bien',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
@@ -35,6 +38,7 @@ module.exports = {
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       gender: 'Nam',
+      token: generateToken(),
       restaurantDomainName: 'anh-sao',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
