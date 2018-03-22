@@ -1,8 +1,8 @@
 const { Future, encaseP } = require('fluture')
 
-const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
-const { responseError } = require('../../../helpers/responseErrorHelper')
-const responseDataHelper = require('../../../helpers/responseDataHelper')
+const { paramsExistedOrEmpty } = require('../../helpers/checkParamsHelper')
+const { responseError } = require('../../helpers/responseErrorHelper')
+const responseDataHelper = require('../../helpers/responseDataHelper')
 
 const { getProfile, checkProfileExist, checkPassword } = require('./general')
 

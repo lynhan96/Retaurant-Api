@@ -14,6 +14,6 @@ exports.getProfile = params => Promise.all([
   })
 ]).then(data => data)
 
-exports.checkProfileExist = profile => R.flatten(profile).length > 0 ? of(R.flatten(profile[0])) : reject(414)
+exports.checkProfileExist = profile => R.flatten(profile).length > 0 ? of(R.flatten(profile)[0]) : reject(414)
 
 exports.checkPassword = (profile, params) => profile.password === md5(params.password) ? of(profile) : reject(416)

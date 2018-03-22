@@ -5,56 +5,56 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('employees', [{
       name: 'Nguyen Van A',
-      position: 'administrator',
+      position: 'Quản trị viên',
       email: 'quantrivien@gmail.com',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       birthday: moment.utc().subtract(10, 'years').format('YYYY-MM-DD hh:mm:ss'),
-      gender: 'male',
+      gender: 'Nam',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
     },
     {
       name: 'Nguyen Van B',
-      position: 'warehouse',
+      position: 'Nhân viên kho',
       email: 'nhanvienkho@gmail.com',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       birthday: moment.utc().subtract(10, 'years').format('YYYY-MM-DD hh:mm:ss'),
-      gender: 'male',
+      gender: 'Nam',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
     },
     {
       name: 'Nguyen Van C',
-      position: 'waiter',
+      position: 'Nhân viên phục vụ',
       email: 'phucvu@gmail.com',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       birthday: moment.utc().subtract(10, 'years').format('YYYY-MM-DD hh:mm:ss'),
-      gender: 'male',
+      gender: 'Nam',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
     },
     {
       name: 'Nguyen Van D',
-      position: 'kitchen',
+      position: 'Nhân viên bếp',
       email: 'nhabep@gmail.com',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       birthday: moment.utc().subtract(10, 'years').format('YYYY-MM-DD hh:mm:ss'),
-      gender: 'male',
+      gender: 'Nam',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
     },
     {
-      name: 'Nguyen Van E',
-      position: 'cashier',
+      name: 'Nguyễn Văn E',
+      position: 'Nhân viên thu ngân',
       email: 'thungan@gmail.com',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
       birthday: moment.utc().subtract(10, 'years').format('YYYY-MM-DD hh:mm:ss'),
-      gender: 'male',
+      gender: 'Nam',
       createdAt: moment.utc().format('YYYY-MM-DD hh:mm:ss'),
       updatedAt: moment.utc().format('YYYY-MM-DD hh:mm:ss')
     }], {})
