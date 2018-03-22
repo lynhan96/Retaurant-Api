@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      token: {
+        type: Sequelize.STRING
+      },
       name: {
         type: Sequelize.STRING
       },
@@ -27,19 +30,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       isVip: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
         defaultValue: true
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW
+        type: Sequelize.DATE
       }
     })
   },

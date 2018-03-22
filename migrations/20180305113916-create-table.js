@@ -14,12 +14,13 @@ module.exports = {
       zoneId: {
         type: Sequelize.INTEGER
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     })

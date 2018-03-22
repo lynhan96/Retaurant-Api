@@ -2,7 +2,7 @@ const sequelize = require('sequelize')
 
 const sequelizeDb = require('./sequelize')
 
-const User = sequelizeDb.define('users', {
+const User = sequelizeDb.define('vendors', {
   name: {
     type: sequelize.STRING
   },
@@ -12,19 +12,14 @@ const User = sequelizeDb.define('users', {
   password: {
     type: sequelize.STRING
   },
-  phoneNumber: {
+  restaurantName: {
     type: sequelize.STRING
   },
-  birthday: {
+  expiredDate: {
     type: sequelize.DATE
   },
-  gender: {
+  imageUrl: {
     type: sequelize.STRING
-  },
-  isVip: {
-    allowNull: false,
-    type: sequelize.BOOLEAN,
-    defaultValue: true
   },
   createdAt: {
     type: sequelize.DATE

@@ -32,7 +32,7 @@ exports.employees = (req, res) => {
     sortBy: 'id',
     sortDir: 'asc',
     offset: 0,
-    limit: 3
+    limit: 50
   }
 
   defaultSearchParams = R.merge(defaultSearchParams)(params)

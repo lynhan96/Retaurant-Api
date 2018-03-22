@@ -9,6 +9,9 @@ const Bill = sequelizeDb.define('bills', {
   status: {
     type: sequelize.STRING
   },
+  vendorId: {
+    type: sequelize.INTEGER
+  },
   paymentMethod: {
     type: sequelize.STRING
   },
@@ -25,12 +28,10 @@ const Bill = sequelizeDb.define('bills', {
     type: sequelize.INTEGER
   },
   createdAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   },
   updatedAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   }
 }, {
   freezeTableName: true

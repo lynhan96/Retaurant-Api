@@ -14,6 +14,9 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
       isView: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
@@ -28,11 +31,9 @@ module.exports = {
         type: Sequelize.DATE
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     })

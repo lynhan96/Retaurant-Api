@@ -14,6 +14,9 @@ module.exports = {
       available: {
         type: Sequelize.INTEGER
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
       used: {
         type: Sequelize.INTEGER
       },
@@ -21,11 +24,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     })

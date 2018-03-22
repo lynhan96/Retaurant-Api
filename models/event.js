@@ -9,6 +9,9 @@ const Event = sequelizeDb.define('events', {
   description: {
     type: sequelize.STRING
   },
+  vendorId: {
+    type: sequelize.INTEGER
+  },
   isView: {
     allowNull: false,
     type: sequelize.BOOLEAN,

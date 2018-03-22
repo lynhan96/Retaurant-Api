@@ -11,6 +11,9 @@ const FoodCategory = sequelizeDb.define('food_categories', {
     type: sequelize.BOOLEAN,
     defaultValue: true
   },
+  description: {
+    type: sequelize.STRING
+  },
   createdAt: {
     type: sequelize.DATE,
     defaultValue: sequelize.NOW

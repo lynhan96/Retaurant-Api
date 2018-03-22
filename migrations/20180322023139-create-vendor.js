@@ -1,18 +1,33 @@
 'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('zones', {
+    return queryInterface.createTable('vendors', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      token: {
+        type: Sequelize.STRING
+      },
       name: {
         type: Sequelize.STRING
       },
-      vendorId: {
-        type: Sequelize.INTEGER
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      restaurantName: {
+        type: Sequelize.STRING
+      },
+      expiredDate: {
+        type: Sequelize.DATE
+      },
+      imageUrl: {
+        type: Sequelize.STRING
       },
       createdAt: {
         type: Sequelize.DATE
@@ -23,6 +38,6 @@ module.exports = {
     })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('zones')
+    return queryInterface.dropTable('vendors')
   }
 }

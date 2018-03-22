@@ -9,13 +9,14 @@ const Table = sequelizeDb.define('tables', {
   zoneId: {
     type: sequelize.INTEGER
   },
+  vendorId: {
+    type: sequelize.INTEGER
+  },
   createdAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   },
   updatedAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   }
 }, {
   freezeTableName: true

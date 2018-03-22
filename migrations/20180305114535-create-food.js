@@ -14,6 +14,12 @@ module.exports = {
       foodCategoryId: {
         type: Sequelize.INTEGER
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.STRING
+      },
       oldPrice: {
         type: Sequelize.INTEGER
       },
@@ -37,11 +43,9 @@ module.exports = {
         type: Sequelize.DATE
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     })

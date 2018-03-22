@@ -16,12 +16,16 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: true
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.STRING
+      },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     })

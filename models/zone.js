@@ -6,6 +6,9 @@ const Zone = sequelizeDb.define('zones', {
   name: {
     type: sequelize.STRING
   },
+  vendorId: {
+    type: sequelize.INTEGER
+  },
   createdAt: {
     type: sequelize.DATE,
     defaultValue: sequelize.NOW

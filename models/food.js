@@ -13,6 +13,12 @@ const Food = sequelizeDb.define('foods', {
     type: sequelize.BOOLEAN,
     defaultValue: true
   },
+  vendorId: {
+    type: sequelize.INTEGER
+  },
+  description: {
+    type: sequelize.STRING
+  },
   startDate: {
     allowNull: false,
     type: sequelize.DATE,

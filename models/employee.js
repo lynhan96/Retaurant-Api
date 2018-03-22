@@ -3,9 +3,8 @@ const sequelize = require('sequelize')
 const sequelizeDb = require('./sequelize')
 
 const Employee = sequelizeDb.define('employees', {
-  phoneNumber: {
-    type: sequelize.STRING
-  },
+  phoneNumber: sequelize.STRING,
+  vendorId: sequelize.INTEGER,
   name: sequelize.STRING,
   email: sequelize.STRING,
   position: sequelize.STRING,
@@ -13,12 +12,10 @@ const Employee = sequelizeDb.define('employees', {
   gender: sequelize.STRING,
   password: sequelize.STRING,
   createdAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   },
   updatedAt: {
-    type: sequelize.DATE,
-    defaultValue: sequelize.NOW
+    type: sequelize.DATE
   }
 }, {
   freezeTableName: true

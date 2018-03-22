@@ -14,6 +14,6 @@ module.exports = new Sequelize(process.env.LOCAL_DB_NAME, process.env.LOCAL_DB_U
   },
   operatorsAliases: false,
   define: {
-    timestamps: false
+    timestamps: true
   }
 })

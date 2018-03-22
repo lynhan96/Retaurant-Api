@@ -1,11 +1,8 @@
 const { reject, of } = require('fluture')
-const md5 = require('md5')
+const R = require('ramda')
+
 const Employee = require('../../../../models/employee')
 const { Op } = require('../../../../models/sequelize')
-
-exports.checkUserExist = user => user ? of(user) : reject(414)
-
-exports.checkPassword = (profile, params) => profile.password === md5(params.password) ? of(profile) : reject(416)
 
 const employeeAttrs = [
   'id',
@@ -47,8 +44,8 @@ exports.getEmployeesByKeyWord = params => Employee.findAll({
       [Op.ne]: 'administrator'
     },
     [Op.or]: [
-      {name: { [Op.iLike]: '%' + params.keyword + '%' }},
-      {position: { [Op.iLike]: '%' + params.keyword + '%' }}
+      {name: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }},
+      {position: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }}
     ]
   },
   attributes: employeeAttrs,
