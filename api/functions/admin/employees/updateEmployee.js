@@ -1,4 +1,5 @@
 const { Future, encaseP } = require('fluture')
+const md5 = require('md5')
 
 const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
 const { responseError } = require('../../../helpers/responseErrorHelper')
@@ -10,6 +11,10 @@ exports.updateEmployee = (req, res) => {
   const { headers } = req
 
   params['vendorId'] = headers['vid']
+
+  if (params.password && params.password !== '') {
+    params.password = md5(params.password)
+  }
 
   const requiredParams = ['employeeId']
 
