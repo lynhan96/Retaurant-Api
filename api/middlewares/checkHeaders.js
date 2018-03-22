@@ -4,15 +4,24 @@ const md5 = require('md5')
 const { Future, encaseP, reject, of } = require('fluture')
 
 const { responseErrorWithNext: responseError } = require('../helpers/responseErrorHelper')
-const { getEmployeeProfile } = require('../functions/admin/general')
+const Employee = require('../../models/employee')
+const Vendor = require('../../models/vendor')
 
 const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-language', 'uid', 'token']
 const requiredAuthenticationUrls = [
-  '/v1/profile',
-  '/v1/updateProfile'
+  '/v1/login'
 ]
 
-const checkUserExist = profile => profile ? of(profile) : reject(401)
+const getProfile = headers => Promise.all([
+  Employee.findAll({
+    where: {id: headers.uid, token: headers.token}
+  }),
+  Vendor.findAll({
+    where: {id: headers.uid, token: headers.token}
+  })
+]).then(data => data)
+
+const checkProfileExist = profile => R.flatten(profile).length > 0 ? of(R.flatten(profile)[0]) : reject(414)
 
 const checkHeaderValues = (next, res, headers) => {
   if (R.keys(headers).length < requiredHeaders.length) {
@@ -32,16 +41,18 @@ const checkRequestDatetime = (next, res, headers) => {
 
 const checkAuthenticationValue = (profile, date, authorization) => {
   const { id, token } = profile.dataValues
+
   return (authorization === md5(md5(token + id + date))) ? of('') : reject(401)
 }
 
 const checkAuthentication = (next, res, headers) => {
-  const { uid, date, authorization } = headers
+  const { uid, authorization } = headers
+  const date = headers['date-time']
 
   if (uid && date && authorization) {
-    Future.of(uid)
-      .chain(encaseP(getEmployeeProfile))
-      .chain(checkUserExist)
+    Future.of(headers)
+      .chain(encaseP(getProfile))
+      .chain(checkProfileExist)
       .chain(profile => checkAuthenticationValue(profile, date, authorization))
       .fork(
         errorCode => responseError(next, res, errorCode),
@@ -56,10 +67,10 @@ module.exports = (req, res, next) => {
   const { headers, originalUrl } = req
   const neededHeaders = R.pick(requiredHeaders, headers)
 
-  // checkHeaderValues(next, res, neededHeaders)
-  // checkRequestDatetime(next, res, neededHeaders)
+  checkHeaderValues(next, res, neededHeaders)
+  checkRequestDatetime(next, res, neededHeaders)
 
-  if (R.indexOf(originalUrl, requiredAuthenticationUrls) === -1) {
+  if (R.indexOf(originalUrl, requiredAuthenticationUrls) !== -1) {
     next()
   } else {
     checkAuthentication(next, res, headers)
