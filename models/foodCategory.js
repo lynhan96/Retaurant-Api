@@ -7,9 +7,8 @@ const FoodCategory = sequelizeDb.define('food_categories', {
     type: sequelize.STRING
   },
   isView: {
-    allowNull: false,
-    type: sequelize.BOOLEAN,
-    defaultValue: true
+    defaultValue: true,
+    type: sequelize.BOOLEAN
   },
   description: {
     type: sequelize.STRING

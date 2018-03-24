@@ -12,7 +12,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       isView: {
-        allowNull: false,
         type: Sequelize.BOOLEAN,
         defaultValue: true
       },
