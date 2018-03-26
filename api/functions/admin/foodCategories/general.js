@@ -36,8 +36,7 @@ exports.getFoodCategorysByKeyWord = params => FoodCategory.findAll({
   where: {
     vendorId: params.vendorId,
     [Op.or]: [
-      {name: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }},
-      {position: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }}
+      {name: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }}
     ]
   },
   attributes: foodCategoryAttrs,

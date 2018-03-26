@@ -11,7 +11,7 @@ exports.createFoodCategory = (req, res) => {
 
   params['vendorId'] = headers['vid']
 
-  const requiredParams = ['name', 'description', 'isView']
+  const requiredParams = ['name', 'description']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)

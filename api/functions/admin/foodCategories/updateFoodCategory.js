@@ -11,9 +11,6 @@ exports.updateFoodCategory = (req, res) => {
 
   params['vendorId'] = headers['vid']
 
-  params.isView = true
-
-  console.log(params)
   const requiredParams = ['foodCategoryId']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
