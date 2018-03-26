@@ -12,6 +12,11 @@ const requiredAuthenticationUrls = [
   '/v1/login'
 ]
 
+const notAuthenticationUrls = [
+  '/website/v1/food',
+  '/website/v1/foods'
+]
+
 const getProfile = headers => Promise.all([
   Employee.findAll({
     where: {id: headers.uid, token: headers.token}
@@ -66,6 +71,10 @@ const checkAuthentication = (next, res, headers) => {
 module.exports = (req, res, next) => {
   const { headers, originalUrl } = req
   const neededHeaders = R.pick(requiredHeaders, headers)
+
+  if (req._parsedUrl && req._parsedUrl.pathname && R.indexOf(req._parsedUrl.pathname, notAuthenticationUrls) !== -1) {
+    return next()
+  }
 
   checkHeaderValues(next, res, neededHeaders)
   checkRequestDatetime(next, res, neededHeaders)
