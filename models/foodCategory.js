@@ -18,7 +18,7 @@ const FoodCategory = sequelizeDb.define('food_categories', {
     type: sequelize.INTEGER
   },
   imageUrl: {
-    type: sequelize.ARRAY(sequelize.TEXT)
+    type: sequelize.JSON
   },
   createdAt: {
     type: sequelize.DATE,

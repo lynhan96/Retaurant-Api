@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       imageUrl: {
-        type: Sequelize.ARRAY(Sequelize.TEXT)
+        type: Sequelize.JSON
       },
       description: {
         type: Sequelize.TEXT
