@@ -11,11 +11,14 @@ const FoodCategory = sequelizeDb.define('food_categories', {
     type: sequelize.BOOLEAN
   },
   description: {
-    type: sequelize.STRING
+    type: sequelize.TEXT
   },
   vendorId: {
     allowNull: false,
     type: sequelize.INTEGER
+  },
+  imageUrl: {
+    type: sequelize.ARRAY(sequelize.TEXT)
   },
   createdAt: {
     type: sequelize.DATE,

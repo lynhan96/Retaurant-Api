@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       oldPrice: {
         type: Sequelize.INTEGER
@@ -28,6 +28,9 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING
+      },
+      imageUrl: {
+        type: Sequelize.ARRAY(Sequelize.TEXT)
       },
       isView: {
         allowNull: false,

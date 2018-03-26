@@ -1,5 +1,4 @@
 const { Future, encaseP } = require('fluture')
-const md5 = require('md5')
 
 const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
 const { responseError } = require('../../../helpers/responseErrorHelper')
@@ -12,10 +11,9 @@ exports.updateFoodCategory = (req, res) => {
 
   params['vendorId'] = headers['vid']
 
-  if (params.password && params.password !== '') {
-    params.password = md5(params.password)
-  }
+  params.isView = true
 
+  console.log(params)
   const requiredParams = ['foodCategoryId']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {

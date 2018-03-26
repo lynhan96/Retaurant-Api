@@ -9,6 +9,7 @@ const foodCategoryAttrs = [
   'name',
   'description',
   'isView',
+  'imageUrl',
   'createdAt',
   'updatedAt'
 ]
@@ -49,10 +50,10 @@ exports.getFoodCategory = params => FoodCategory.findOne({
   where: { id: params.foodCategoryId, vendorId: params.vendorId }
 })
 
-exports.checkFoodCategoryExsit = FoodCategory => FoodCategory ? of(FoodCategory) : reject(417)
+exports.checkFoodCategoryExsit = foodCategory => foodCategory ? of(foodCategory) : reject(417)
 
-exports.updateFoodCategory = (FoodCategory, params) => FoodCategory.update(params)
+exports.updateFoodCategory = (foodCategory, params) => foodCategory.update(params)
 
 exports.createFoodCategory = params => FoodCategory.create(params)
 
-exports.deleteFoodCategory = FoodCategory => FoodCategory.destroy()
+exports.deleteFoodCategory = foodCategory => foodCategory.destroy()

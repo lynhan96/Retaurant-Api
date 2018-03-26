@@ -18,7 +18,10 @@ const Food = sequelizeDb.define('foods', {
     type: sequelize.INTEGER
   },
   description: {
-    type: sequelize.STRING
+    type: sequelize.TEXT
+  },
+  imageUrl: {
+    type: sequelize.ARRAY(Sequelize.TEXT)
   },
   startDate: {
     allowNull: false,

@@ -18,8 +18,11 @@ module.exports = {
       vendorId: {
         type: Sequelize.INTEGER
       },
+      imageUrl: {
+        type: Sequelize.ARRAY(Sequelize.TEXT)
+      },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         type: Sequelize.DATE
