@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       imageUrl: {
-        type: Sequelize.ARRAY(Sequelize.TEXT)
+        type: Sequelize.JSON
       },
       isView: {
         allowNull: false,

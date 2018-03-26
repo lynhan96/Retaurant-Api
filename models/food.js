@@ -21,15 +21,13 @@ const Food = sequelizeDb.define('foods', {
     type: sequelize.TEXT
   },
   imageUrl: {
-    type: sequelize.ARRAY(Sequelize.TEXT)
+    type: sequelize.JSON
   },
   startDate: {
-    allowNull: false,
     type: sequelize.DATE,
     defaultValue: sequelize.NOW
   },
   endDate: {
-    allowNull: false,
     type: sequelize.DATE,
     defaultValue: sequelize.NOW
   },
