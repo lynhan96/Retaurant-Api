@@ -14,7 +14,9 @@ const requiredAuthenticationUrls = [
 
 const notAuthenticationUrls = [
   '/website/v1/food',
-  '/website/v1/foods'
+  '/website/v1/foods',
+  '/website/v1/createUser',
+  '/website/v1/login'
 ]
 
 const getProfile = headers => Promise.all([
