@@ -10,22 +10,20 @@ const { generateToken } = require('../general')
 exports.createUser = (req, res) => {
   let params = req.body
 
-  console.log(params)
-
   params['token'] = generateToken()
 
   if (params.password && params.password !== '') {
     params.password = md5(params.password)
   }
 
-  const requiredParams = ['name', 'phoneNumber', 'gender']
+  const requiredParams = ['name', 'phoneNumber', 'password', 'email']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)
       .chain(encaseP(createUser))
       .fork(
         error => responseError(res, error),
-        _ => responseDataHelper(res, {})
+        data => responseDataHelper(res, { uid: data.id, name: data.name, token: data.token })
       )
   }
 }
