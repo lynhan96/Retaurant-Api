@@ -4,7 +4,7 @@ const md5 = require('md5')
 const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
 const { responseError } = require('../../../helpers/responseErrorHelper')
 const responseDataHelper = require('../../../helpers/responseDataHelper')
-const { getUser, checkUserExsit, register } = require('./general')
+const { checkUserNotExsit, register } = require('./general')
 
 exports.register = (req, res) => {
     let params = req.body
@@ -14,6 +14,7 @@ exports.register = (req, res) => {
 
     if (paramsExistedOrEmpty(res, params, ["email", "password"], ["email", "password"])) {
         Future.of(params)
+            .chain(encaseP(checkUserNotExsit))
             .chain(encaseP(register))
             .fork(
                 error => responseError(res, error),
