@@ -12,6 +12,9 @@ const User = sequelizeDb.define('users', {
   password: {
     type: sequelize.STRING
   },
+  token: {
+    type: sequelize.STRING
+  },
   phoneNumber: {
     type: sequelize.STRING
   },
