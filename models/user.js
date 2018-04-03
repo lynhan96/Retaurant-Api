@@ -34,6 +34,9 @@ const User = sequelizeDb.define('users', {
   },
   updatedAt: {
     type: sequelize.DATE
+  },
+  token: {
+    type: sequelize.STRING
   }
 }, {
   freezeTableName: true
