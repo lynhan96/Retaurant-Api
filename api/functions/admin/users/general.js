@@ -16,11 +16,17 @@ const userAttrs = [
 ]
 
 exports.getUsers = params => User.findAll({
+  where: {
+    vendorId: params.vendorId
+  },
   attributes: userAttrs,
   order: [[params.sortBy, params.sortDir]]
 })
 
 exports.getUsersLimit = params => User.findAll({
+  where: {
+    vendorId: params.vendorId
+  },
   attributes: userAttrs,
   order: [[params.sortBy, params.sortDir]],
   offset: parseInt(params.limit) * parseInt(params.offset),
@@ -29,6 +35,7 @@ exports.getUsersLimit = params => User.findAll({
 
 exports.getUsersByKeyWord = params => User.findAll({
   where: {
+    vendorId: params.vendorId,
     [Op.or]: [
       {name: { [Op.iLike]: '%' + R.toLower(params.keyword) + '%' }}
     ]
@@ -40,16 +47,16 @@ exports.getUsersByKeyWord = params => User.findAll({
 })
 
 exports.getUser = params => User.findOne({
-  where: { id: params.userId }
+  where: { id: params.userId, vendorId: params.vendorId }
 })
 
 exports.getUserByEmail = params => User.findOne({
-  where: { email: params.email }
+  where: { email: params.email, vendorId: params.vendorId }
 })
 
 exports.checkUserExsit = user => user ? of(user) : reject(417)
 
-exports.checkUserEmailExsit = user => user ? of(user) : reject(418)
+exports.checkUserEmailExsit = user => user ? reject(418) : of(user)
 
 exports.updateUser = (user, params) => user.update(params)
 

@@ -23,6 +23,9 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.STRING
       },
+      vendorId: {
+        type: Sequelize.INTEGER
+      },
       birthday: {
         type: Sequelize.DATE
       },

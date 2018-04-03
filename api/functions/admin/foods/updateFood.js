@@ -17,7 +17,7 @@ exports.updateFood = (req, res) => {
     Future.of(params)
       .chain(encaseP(getFood))
       .chain(checkFoodExsit)
-      .chain(encaseP(Food => updateFood(Food, params)))
+      .chain(encaseP(food => updateFood(food, params)))
       .fork(
         error => responseError(res, error),
         _ => responseDataHelper(res, {})

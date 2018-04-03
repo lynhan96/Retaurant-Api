@@ -21,6 +21,10 @@ const User = sequelizeDb.define('users', {
   birthday: {
     type: sequelize.DATE
   },
+  vendorId: {
+    allowNull: false,
+    type: sequelize.INTEGER
+  },
   gender: {
     type: sequelize.STRING
   },
@@ -34,9 +38,6 @@ const User = sequelizeDb.define('users', {
   },
   updatedAt: {
     type: sequelize.DATE
-  },
-  token: {
-    type: sequelize.STRING
   }
 }, {
   freezeTableName: true

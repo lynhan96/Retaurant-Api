@@ -27,6 +27,9 @@ const dataHandler = (res, allUser, defaultSearchParams) => {
 
 exports.listUsers = (req, res) => {
   let params = req.body
+  const { headers } = req
+
+  params['vendorId'] = headers['vid']
 
   let defaultSearchParams = {
     sortBy: 'id',

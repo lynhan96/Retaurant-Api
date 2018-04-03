@@ -4,7 +4,7 @@ const md5 = require('md5')
 const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
 const { responseError } = require('../../../helpers/responseErrorHelper')
 const responseDataHelper = require('../../../helpers/responseDataHelper')
-const { getUser, updateUser, checkUserExsit } = require('./general')
+const { getUser, updateUser, checkUserExsit, getUserByEmail, checkUserEmailExsit } = require('./general')
 
 exports.updateUser = (req, res) => {
   let params = req.body
@@ -20,7 +20,9 @@ exports.updateUser = (req, res) => {
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)
-      .chain(encaseP(getUser))
+      .chain(encaseP(getUserByEmail))
+      .chain(checkUserEmailExsit)
+      .chain(encaseP(_ => getUser(params)))
       .chain(checkUserExsit)
       .chain(encaseP(User => updateUser(User, params)))
       .fork(
