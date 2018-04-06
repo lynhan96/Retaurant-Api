@@ -29,7 +29,6 @@ const User = sequelizeDb.define('users', {
     type: sequelize.STRING
   },
   isVip: {
-    allowNull: false,
     type: sequelize.BOOLEAN,
     defaultValue: true
   },

@@ -8,7 +8,7 @@ const { getProfile, checkProfileExist, checkPassword } = require('./general')
 
 exports.login = (req, res) => {
   const params = req.body
-  const requiredParams = ['email', 'password']
+  const requiredParams = ['email', 'password', 'vendorId']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)
@@ -17,7 +17,7 @@ exports.login = (req, res) => {
       .chain(profile => checkPassword(profile, params))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { uid: data.id, name: data.name, token: data.token })
+        data => responseDataHelper(res, { uid: data.id, name: data.name, token: data.token, vendorId: data.vendorId })
       )
   }
 }
