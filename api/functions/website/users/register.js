@@ -6,7 +6,7 @@ const { responseError } = require('../../../helpers/responseErrorHelper')
 const responseDataHelper = require('../../../helpers/responseDataHelper')
 const { checkUserNotExsit, register } = require('./general')
 
-exports.register = (req, res) => {
+exports.registerUser = (req, res) => {
     let params = req.body
     if (params.password && params.password !== '') {
         params.password = md5(params.password)
@@ -15,7 +15,7 @@ exports.register = (req, res) => {
     if (paramsExistedOrEmpty(res, params, ["email", "password"], ["email", "password"])) {
         Future.of(params)
             .chain(encaseP(checkUserNotExsit))
-            .chain(encaseP(register))
+            .chain(encaseP(user =>register(params)))
             .fork(
                 error => responseError(res, error),
                 _ => responseDataHelper(res, {})

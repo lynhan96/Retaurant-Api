@@ -4,20 +4,20 @@ const { paramsExistedOrEmpty } = require('../../../helpers/checkParamsHelper')
 const { responseError } = require('../../../helpers/responseErrorHelper')
 const responseDataHelper = require('../../../helpers/responseDataHelper')
 
-const { getUser, checkProfileExist, checkPassword } = require('./general')
+const { getUser, checkUserExsit, checkPassword } = require('./general')
 
-exports.login = (req, res) => {
+exports.loginUser = (req, res) => {
   const params = req.body
   const requiredParams = ['email', 'password']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)
       .chain(encaseP(getUser))
-      .chain(checkProfileExist)
-      .chain(profile => checkPassword(profile, params))
+      .chain(checkUserExsit)
+      .chain(user => checkPassword(user, params))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { position: data.position, uid: data.id, name: data.name, token: data.token })
+        data => responseDataHelper(res, { position: data.position, uid: data.id, name: data.name })
       )
   }
 }
