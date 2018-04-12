@@ -9,7 +9,8 @@ const Vendor = require('../../models/vendor')
 
 const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-language', 'uid', 'token']
 const requiredAuthenticationUrls = [
-  '/v1/login'
+  '/v1/login',
+  '/v1/forgotPassword'
 ]
 
 const notAuthenticationUrls = [
@@ -79,7 +80,7 @@ module.exports = (req, res, next) => {
   }
 
   checkHeaderValues(next, res, neededHeaders)
-  checkRequestDatetime(next, res, neededHeaders)
+  // checkRequestDatetime(next, res, neededHeaders)
 
   if (R.indexOf(originalUrl, requiredAuthenticationUrls) !== -1) {
     next()

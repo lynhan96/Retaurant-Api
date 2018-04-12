@@ -24,7 +24,7 @@ exports.updateUser = (req, res) => {
       .chain(checkUserEmailExsit)
       .chain(encaseP(_ => getUser(params)))
       .chain(checkUserExsit)
-      .chain(encaseP(User => updateUser(User, params)))
+      .chain(encaseP(user => updateUser(user, params)))
       .fork(
         error => responseError(res, error),
         _ => responseDataHelper(res, {})
