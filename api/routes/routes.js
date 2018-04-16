@@ -5,6 +5,7 @@ const foodCategoryRoute = require('./admin/foodCategoryRoute')
 const foodRouteWebsite = require('./website/foodRoute')
 
 const userRouteWebsite = require('./website/userRoute')
+const contactRouteWebsite = require('./website/contactRoute')
 module.exports = app => {
     employeeRoute(app)
     loginRoute(app)
@@ -13,4 +14,5 @@ module.exports = app => {
     // website API
     foodRouteWebsite(app)
     userRouteWebsite(app)
+    contactRouteWebsite(app)
 }

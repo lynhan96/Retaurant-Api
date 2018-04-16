@@ -16,7 +16,8 @@ const notAuthenticationUrls = [
   '/website/v1/food',
   '/website/v1/foods',
   '/v1/website/register',
-  '/v1/website/login'
+  '/v1/website/login',
+  '/v1/website/contact'
 ]
 
 const getProfile = headers => Promise.all([
