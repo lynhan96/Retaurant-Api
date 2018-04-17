@@ -9,15 +9,16 @@ const Vendor = require('../../models/vendor')
 
 const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-language', 'uid', 'token']
 const requiredAuthenticationUrls = [
-  '/v1/login'
+  '/v1/login',
+  '/v1/forgotPassword'
 ]
 
 const notAuthenticationUrls = [
   '/website/v1/food',
   '/website/v1/foods',
-  '/v1/website/register',
-  '/v1/website/login',
-  '/v1/website/contact'
+  '/website/v1/createUser',
+  '/website/v1/login',
+  '/website/v1/contact'
 ]
 
 const getProfile = headers => Promise.all([
@@ -80,7 +81,7 @@ module.exports = (req, res, next) => {
   }
 
   checkHeaderValues(next, res, neededHeaders)
-  checkRequestDatetime(next, res, neededHeaders)
+  // checkRequestDatetime(next, res, neededHeaders)
 
   if (R.indexOf(originalUrl, requiredAuthenticationUrls) !== -1) {
     next()

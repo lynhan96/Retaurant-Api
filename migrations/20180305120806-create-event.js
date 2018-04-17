@@ -14,6 +14,9 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      imageUrl: {
+        type: Sequelize.JSON
+      },
       vendorId: {
         type: Sequelize.INTEGER
       },
@@ -21,14 +24,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN,
         defaultValue: true
-      },
-      startDate: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      endDate: {
-        allowNull: false,
-        type: Sequelize.DATE
       },
       createdAt: {
         type: Sequelize.DATE

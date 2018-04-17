@@ -20,7 +20,7 @@ module.exports = {
     {
       name: 'Trần văn C',
       position: 'vendor',
-      email: 'vendor1@gmail.com',
+      email: 'vendor2@gmail.com',
       restaurantName: 'Nhà hàng Sao biển',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',
@@ -33,7 +33,7 @@ module.exports = {
     {
       name: 'Trần văn D',
       position: 'vendor',
-      email: 'vendor1@gmail.com',
+      email: 'vendor3@gmail.com',
       restaurantName: 'Nhà hàng Ánh sao',
       password: '4297f44b13955235245b2497399d7a93',
       phoneNumber: '+842345678',

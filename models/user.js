@@ -12,17 +12,23 @@ const User = sequelizeDb.define('users', {
   password: {
     type: sequelize.STRING
   },
+  token: {
+    type: sequelize.STRING
+  },
   phoneNumber: {
     type: sequelize.STRING
   },
   birthday: {
     type: sequelize.DATE
   },
+  vendorId: {
+    allowNull: false,
+    type: sequelize.INTEGER
+  },
   gender: {
     type: sequelize.STRING
   },
   isVip: {
-    allowNull: false,
     type: sequelize.BOOLEAN,
     defaultValue: true
   },

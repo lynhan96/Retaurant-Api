@@ -7,7 +7,8 @@ const errors = {
   403: 'Database error',
   414: 'Profile not found',
   416: 'Invalid password',
-  417: 'Data not exist'
+  417: 'Data not exist',
+  418: 'Email is existed'
 }
 
 const errorParams = code => ({ code: code, message: errors[code] })

@@ -1,6 +1,7 @@
 const sequelize = require('sequelize')
 
 const sequelizeDb = require('./sequelize')
+const FoodCategory = require('./foodCategory')
 
 const Food = sequelizeDb.define('foods', {
   name: sequelize.STRING,
@@ -42,5 +43,7 @@ const Food = sequelizeDb.define('foods', {
 }, {
   freezeTableName: true
 })
+
+Food.belongsTo(FoodCategory, {as: 'foodCategory'})
 
 module.exports = Food

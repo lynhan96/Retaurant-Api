@@ -18,13 +18,8 @@ const Event = sequelizeDb.define('events', {
     type: sequelize.BOOLEAN,
     defaultValue: true
   },
-  startDate: {
-    allowNull: false,
-    type: sequelize.DATE
-  },
-  endDate: {
-    allowNull: false,
-    type: sequelize.DATE
+  imageUrl: {
+    type: sequelize.JSON
   },
   createdAt: {
     type: sequelize.DATE,

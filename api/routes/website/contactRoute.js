@@ -1,4 +1,4 @@
 const { createContact } = require('../../functions/website/contact/contact')
 module.exports = app => {
-  app.route('/v1/website/contact').post(createContact)
+  app.route('/website/v1/contact').post(createContact)
 }

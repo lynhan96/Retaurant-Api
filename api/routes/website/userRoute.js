@@ -1,6 +1,7 @@
-const { registerUser } = require('../../functions/website/users/register')
-const { loginUser } = require('../../functions/website/users/login')
+const { updateUser } = require('../../functions/website/user/updateUser')
+const { createUser } = require('../../functions/website/user/createUser')
+
 module.exports = app => {
-    app.route('/v1/website/register').post(registerUser)
-    app.route('/v1/website/login').post(loginUser)
+  app.route('/website/v1/updateUser').post(updateUser)
+  app.route('/website/v1/createUser').post(createUser)
 }

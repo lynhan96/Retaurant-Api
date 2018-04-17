@@ -2,8 +2,8 @@ const { reject, of } = require('fluture')
 const R = require('ramda')
 
 const Food = require('../../../../models/food')
-const FoodCategory = require('../../../../models/foodCategory')
 const { Op } = require('../../../../models/sequelize')
+const FoodCategory = require('../../../../models/foodCategory')
 
 const foodCategoryAttrs = [
   'id',
@@ -15,13 +15,18 @@ const foodCategoryAttrs = [
 
 const foodAttrs = [
   'id',
-  'foodCategoryId',
   'name',
+  'description',
   'oldPrice',
   'currentPrice',
+  'foodCategoryId',
   'status',
-  'description',
-  'imageUrl'
+  'startDate',
+  'endDate',
+  'isView',
+  'imageUrl',
+  'createdAt',
+  'updatedAt'
 ]
 
 const foodCategoryModel = {
@@ -65,8 +70,13 @@ exports.getFoodsByKeyWord = params => Food.findAll({
 })
 
 exports.getFood = params => Food.findOne({
-  include: [foodCategoryModel],
   where: { id: params.foodId, vendorId: params.vendorId }
 })
 
 exports.checkFoodExsit = food => food ? of(food) : reject(417)
+
+exports.updateFood = (food, params) => food.update(params)
+
+exports.createFood = params => Food.create(params)
+
+exports.deleteFood = food => food.destroy()

@@ -20,3 +20,21 @@ exports.checkProfileExist = profile => R.flatten(profile).length > 0 ? of(R.flat
 exports.checkPassword = (profile, params) => profile.password === md5(params.password) ? of(profile) : reject(416)
 
 exports.generateToken = _ => md5('BK-RT-' + moment.utc().format('YYYY-MM-DD hh:mm:ss'))
+
+exports.updatePassword = (arrProfile, newPassword) => {
+  const profile = R.flatten(arrProfile)[0]
+
+  if (profile.position !== 'vendor') {
+    return Employee.update({
+      password: md5(newPassword)
+    }, {
+      where: {email: profile.email}
+    })
+  }
+
+  return Vendor.update({
+    password: md5(newPassword)
+  }, {
+    where: {email: profile.email}
+  })
+}
