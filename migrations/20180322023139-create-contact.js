@@ -23,6 +23,10 @@ module.exports = {
       message: {
         type: Sequelize.STRING
       },
+      viewed: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         type: Sequelize.DATE
       },

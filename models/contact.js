@@ -8,6 +8,7 @@ const Contact = sequelizeDb.define('contact', {
   email: sequelize.STRING,
   address: sequelize.STRING,
   message: sequelize.STRING,
+  viewed: sequelize.BOOLEAN,
   createdAt: {
     type: sequelize.DATE
   },
