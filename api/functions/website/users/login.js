@@ -17,7 +17,7 @@ exports.loginUser = (req, res) => {
       .chain(user => checkPassword(user, params))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { position: data.position, uid: data.id, name: data.name })
+        data => responseDataHelper(res, data)
       )
   }
 }

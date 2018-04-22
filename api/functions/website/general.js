@@ -6,7 +6,7 @@ const { of, reject } = require('fluture')
 const User = require('../../../models/user')
 
 exports.getProfile = params => User.findOne({
-  where: {email: params.email}
+    where: {email: params.email}
 })
 
 exports.checkProfileExist = profile => profile ? of(profile) : reject(414)
