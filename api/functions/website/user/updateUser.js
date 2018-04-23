@@ -22,7 +22,7 @@ exports.updateUser = (req, res) => {
       .chain(encaseP(user => updateUser(user, params)))
       .fork(
         error => responseError(res, error),
-        _ => responseDataHelper(res, {})
+        data => responseDataHelper(res, data)
       )
   }
 }

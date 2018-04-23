@@ -23,7 +23,7 @@ exports.createUser = (req, res) => {
       .chain(encaseP(createUser))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { uid: data.id, name: data.name, token: data.token })
+        data => responseDataHelper(res, data)
       )
   }
 }
