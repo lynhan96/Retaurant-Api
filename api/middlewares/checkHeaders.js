@@ -10,6 +10,7 @@ const Vendor = require('../../models/vendor')
 const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-language', 'uid', 'token']
 const requiredAuthenticationUrls = [
   '/v1/login',
+  '/v1/waiterLogin',
   '/v1/forgotPassword'
 ]
 
