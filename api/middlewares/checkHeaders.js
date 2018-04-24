@@ -50,7 +50,6 @@ const checkRequestDatetime = (next, res, headers) => {
 
 const checkAuthenticationValue = (profile, date, authorization) => {
   const { id, token } = profile.dataValues
-
   return (authorization === md5(md5(token + id + date))) ? of('') : reject(401)
 }
 
