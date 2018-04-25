@@ -17,7 +17,7 @@ exports.login = (req, res) => {
       .chain(profile => checkPassword(profile, params))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { uid: data.id, name: data.name, token: data.token, vendorId: data.vendorId })
+        data => responseDataHelper(res, data)
       )
   }
 }
