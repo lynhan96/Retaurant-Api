@@ -10,7 +10,7 @@ exports.createBooking = (req, res) => {
   const { headers } = req
 
   params['vendorId'] = parseInt(headers['vid'])
-  params['status'] = 'pending'
+  params['status'] = 'Đang chờ'
 
   const requiredParams = ['phoneNumber', 'time']
 
@@ -18,7 +18,10 @@ exports.createBooking = (req, res) => {
     Future.of(params)
       .chain(encaseP(createBooking))
       .fork(
-        error => responseError(res, error),
+        error => {
+          console.log(error)
+          responseError(res, error)
+        },
         _ => responseDataHelper(res, {})
       )
   }
