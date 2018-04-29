@@ -10,8 +10,9 @@ exports.createBooking = (req, res) => {
   const { headers } = req
 
   params['vendorId'] = parseInt(headers['vid'])
+  params['status'] = 'pending'
 
-  const requiredParams = ['name', 'phoneNumber', 'time']
+  const requiredParams = ['phoneNumber', 'time']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)

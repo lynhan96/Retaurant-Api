@@ -6,6 +6,7 @@ const bookingAttrs = [
   'id',
   'name',
   'phoneNumber',
+  'people',
   'vendorId',
   'note',
   'createdAt',
