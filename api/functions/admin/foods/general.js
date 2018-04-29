@@ -35,6 +35,16 @@ const foodCategoryModel = {
   attributes: foodCategoryAttrs
 }
 
+exports.getFoodsIsView = params => Food.findAll({
+  include: [foodCategoryModel],
+  where: {
+    vendorId: params.vendorId,
+    isView: true
+  },
+  attributes: foodAttrs,
+  order: [[params.sortBy, params.sortDir]]
+})
+
 exports.getFoods = params => Food.findAll({
   include: [foodCategoryModel],
   where: {
