@@ -11,6 +11,7 @@ const requiredHeaders = ['authorization', 'content-type', 'date-time', 'x-api-la
 const requiredAuthenticationUrls = [
   '/v1/login',
   '/v1/waiterLogin',
+  '/v1/kitchenLogin',
   '/v1/forgotPassword'
 ]
 
