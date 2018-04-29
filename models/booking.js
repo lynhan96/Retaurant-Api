@@ -18,7 +18,7 @@ const Booking = sequelizeDb.define('bookings', {
   },
   status: {
     type: sequelize.ENUM,
-    values: ['pending', 'done', 'cancelled']
+    values: ['Đang chờ', 'Đã hoàn thành', 'Đã hủy']
   }
 }, {
   freezeTableName: true
