@@ -11,6 +11,7 @@ const foodRouteWebsite = require('./website/foodRoute')
 const userRouteWebiste = require('./website/userRoute')
 const loginRouteWebiste = require('./website/loginRoute')
 const contactRouteWebsite = require('./website/contactRoute')
+const eventRouteWebsite = require('./website/eventRoute')
 module.exports = app => {
   employeeRoute(app)
   loginRoute(app)
@@ -26,4 +27,5 @@ module.exports = app => {
   userRouteWebiste(app)
   loginRouteWebiste(app)
   contactRouteWebsite(app)
+  eventRouteWebsite(app)
 }
