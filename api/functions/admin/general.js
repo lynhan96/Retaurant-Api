@@ -35,6 +35,16 @@ exports.checkKitchenProfileExist = profile => {
   return of(flattenProfile)
 }
 
+exports.checkCashierProfileExist = profile => {
+  if (R.flatten(profile).length < 1) return reject(414)
+
+  const flattenProfile = R.flatten(profile)[0]
+
+  if (flattenProfile.position !== 'Nhân viên thu ngân') return reject(419)
+
+  return of(flattenProfile)
+}
+
 exports.checkAdminProfileExist = profile => {
   if (R.flatten(profile).length < 1) return reject(414)
 
