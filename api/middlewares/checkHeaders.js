@@ -12,6 +12,7 @@ const requiredAuthenticationUrls = [
   '/v1/login',
   '/v1/waiterLogin',
   '/v1/kitchenLogin',
+  '/v1/cashierLogin',
   '/v1/forgotPassword'
 ]
 
