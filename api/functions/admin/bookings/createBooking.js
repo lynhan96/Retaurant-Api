@@ -10,18 +10,14 @@ exports.createBooking = (req, res) => {
   const { headers } = req
 
   params['vendorId'] = parseInt(headers['vid'])
-  params['status'] = 'Đang chờ'
 
-  const requiredParams = ['phoneNumber', 'time']
+  const requiredParams = ['name', 'phoneNumber', 'time']
 
   if (paramsExistedOrEmpty(res, params, requiredParams, requiredParams)) {
     Future.of(params)
       .chain(encaseP(createBooking))
       .fork(
-        error => {
-          console.log(error)
-          responseError(res, error)
-        },
+        error => responseError(res, error),
         _ => responseDataHelper(res, {})
       )
   }

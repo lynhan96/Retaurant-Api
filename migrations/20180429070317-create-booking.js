@@ -26,7 +26,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.ENUM,
-        values: ['Đang chờ', 'Đã hoàn thành', 'Đã hủy']
+        values: ['Đang chờ xác nhận', 'Hoàn thành', 'Hủy lịch']
       },
       createdAt: {
         allowNull: false,
