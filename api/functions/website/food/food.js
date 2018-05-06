@@ -5,21 +5,21 @@ const { responseError } = require('../../../helpers/responseErrorHelper')
 const responseDataHelper = require('../../../helpers/responseDataHelper')
 const { getFoods, getFoodsByKeyWord, getFoodsLimit } = require('./general')
 
-const dataHandler = (res, allFoodCategory, defaultSearchParams) => {
+const dataHandler = (res, allFood, defaultSearchParams) => {
   const { keyword } = defaultSearchParams
   if (keyword && keyword !== '') {
     Future.of(defaultSearchParams)
       .chain(encaseP(getFoodsByKeyWord))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { totalPage: allFoodCategory.length / defaultSearchParams.limit, items: data })
+        data => responseDataHelper(res, { totalPage: allFood.length / defaultSearchParams.limit, items: data })
       )
   } else {
     Future.of(defaultSearchParams)
       .chain(encaseP(getFoodsLimit))
       .fork(
         error => responseError(res, error),
-        data => responseDataHelper(res, { totalPage: allFoodCategory.length / defaultSearchParams.limit, items: data })
+        data => responseDataHelper(res, { totalPage: allFood.length / defaultSearchParams.limit, items: data })
       )
   }
 }

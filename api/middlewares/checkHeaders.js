@@ -19,6 +19,7 @@ const requiredAuthenticationUrls = [
 const notAuthenticationUrls = [
   '/website/v1/food',
   '/website/v1/foods',
+  '/website/v1/foodCategories',
   '/website/v1/createUser',
   '/website/v1/login',
   '/website/v1/contact',
