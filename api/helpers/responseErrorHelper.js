@@ -9,7 +9,8 @@ const errors = {
   416: 'Invalid password',
   417: 'Data not exist',
   418: 'Email is existed',
-  419: 'Permission Denined'
+  419: 'Permission Denined',
+  420: 'Content not exist'
 }
 
 const errorParams = code => ({ code: code, message: errors[code] })
