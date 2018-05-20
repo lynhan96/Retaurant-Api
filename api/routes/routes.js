@@ -13,6 +13,7 @@ const userRouteWebiste = require('./website/userRoute')
 const loginRouteWebiste = require('./website/loginRoute')
 const contactRouteWebsite = require('./website/contactRoute')
 const eventRouteWebsite = require('./website/eventRoute')
+const aboutUsRouteWebsite = require('./website/aboutUsRoute')
 module.exports = app => {
   employeeRoute(app)
   loginRoute(app)
@@ -30,4 +31,5 @@ module.exports = app => {
   loginRouteWebiste(app)
   contactRouteWebsite(app)
   eventRouteWebsite(app)
+  aboutUsRouteWebsite(app)
 }

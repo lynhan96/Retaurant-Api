@@ -13,8 +13,7 @@ const requiredAuthenticationUrls = [
   '/v1/waiterLogin',
   '/v1/kitchenLogin',
   '/v1/cashierLogin',
-  '/v1/forgotPassword',
-  '/v1/aboutUs'
+  '/v1/forgotPassword'
 ]
 
 const notAuthenticationUrls = [
@@ -26,6 +25,7 @@ const notAuthenticationUrls = [
   '/website/v1/updateUser',
   '/website/v1/event',
   '/website/v1/events',
+  '/website/v1/aboutUs',
   '/website/v1/register'
 ]
 
