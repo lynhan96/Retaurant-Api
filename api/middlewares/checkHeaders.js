@@ -26,6 +26,7 @@ const notAuthenticationUrls = [
   '/website/v1/event',
   '/website/v1/events',
   '/website/v1/aboutUs',
+  '/website/v1/bookingTable',
   '/website/v1/register'
 ]
 

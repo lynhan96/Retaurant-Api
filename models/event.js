@@ -7,7 +7,7 @@ const Event = sequelizeDb.define('events', {
     type: sequelize.STRING
   },
   description: {
-    type: sequelize.STRING
+    type: sequelize.TEXT
   },
   vendorId: {
     allowNull: false,
