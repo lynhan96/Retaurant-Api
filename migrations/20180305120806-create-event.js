@@ -20,6 +20,9 @@ module.exports = {
       vendorId: {
         type: Sequelize.INTEGER
       },
+      sortDescription: {
+        type: Sequelize.STRING
+      },
       isView: {
         allowNull: false,
         type: Sequelize.BOOLEAN,

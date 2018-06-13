@@ -9,6 +9,7 @@ const Food = sequelizeDb.define('foods', {
   oldPrice: sequelize.INTEGER,
   currentPrice: sequelize.INTEGER,
   status: sequelize.STRING,
+  sortDescription: sequelize.STRING,
   isView: {
     allowNull: false,
     type: sequelize.BOOLEAN,

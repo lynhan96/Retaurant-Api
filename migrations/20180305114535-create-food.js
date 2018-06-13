@@ -29,6 +29,9 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
+      sortDescription: {
+        type: Sequelize.STRING
+      },
       imageUrl: {
         type: Sequelize.JSON
       },

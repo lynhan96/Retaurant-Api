@@ -20,6 +20,7 @@ const foodAttrs = [
   'oldPrice',
   'currentPrice',
   'foodCategoryId',
+  'sortDescription',
   'status',
   'startDate',
   'endDate',

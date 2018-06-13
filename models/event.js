@@ -21,6 +21,7 @@ const Event = sequelizeDb.define('events', {
   imageUrl: {
     type: sequelize.JSON
   },
+  sortDescription: sequelize.STRING,
   createdAt: {
     type: sequelize.DATE,
     defaultValue: sequelize.NOW
