@@ -14,6 +14,6 @@ exports.dashboard = (req, res) => {
     .chain(encaseP(getDashboardInfo))
     .fork(
       errorCode => responseError(res, errorCode),
-      data => responseDataHelper(res, {dashboardInfo: data})
+      data => responseDataHelper(res, { 'dashboardInfo': data })
     )
 }
