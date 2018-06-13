@@ -21,6 +21,7 @@ const foodAttrs = [
   'currentPrice',
   'status',
   'description',
+  'sortDescription',
   'imageUrl'
 ]
 

@@ -8,6 +8,7 @@ const eventAttrs = [
   'id',
   'name',
   'description',
+  'sortDescription',
   'imageUrl',
   'updatedAt'
 ]
