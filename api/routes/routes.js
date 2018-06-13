@@ -7,6 +7,7 @@ const eventRoute = require('./admin/eventRoute')
 const contactRoute = require('./admin/contactRoute')
 const bookingRoute = require('./admin/bookingRoute')
 const aboutUsRoute = require('./admin/aboutUsRoute')
+const dashboardRoute = require('./admin/dashboardRoute')
 
 const foodRouteWebsite = require('./website/foodRoute')
 const userRouteWebiste = require('./website/userRoute')
@@ -26,6 +27,7 @@ module.exports = app => {
   contactRoute(app)
   bookingRoute(app)
   aboutUsRoute(app)
+  dashboardRoute(app)
 
   // website API
   foodRouteWebsite(app)
